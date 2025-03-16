@@ -1,0 +1,35 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+    <!-- Provide a Servlet Name -->
+    <servlet-name>spring</servlet-name>
+    
+    <!-- This line is necessary because it tells the Tomcat server (or any servlet container) that we are using Spring MVC's DispatcherServlet as the main controller for handling requests. -->
+    <!-- Without this line, the server won't know that we are using Spring MVC. -->
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    
+    <!-- Specifies the configuration file location (servlet-context.xml). -->
+    <!-- The <init-param> in web.xml is used to tell the DispatcherServlet where to find the Spring configuration file (spring-servlet.xml or servlet-context.xml).
+	Without this, Spring MVC won't know how to configure itself, and your application won't work properly.-->
+    <init-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring-servlet.xml</param-value>
+	</init-param>
+    
+    <!-- Loads this servlet at server startup (priority 1) -->
+    <load-on-startup>1</load-on-startup> <!-- start main controller on server startup! -->
+  </servlet>
+ 
+	<servlet-mapping>
+	    <!-- Provide a Servlet Name that you want to map -->
+	    <servlet-name>spring</servlet-name>  <!-- name of servlet -->
+	    <!-- Provide a url pattern -->
+	    <url-pattern>/</url-pattern> <!-- handle this main url! -->
+	</servlet-mapping>
+  
+</web-app>

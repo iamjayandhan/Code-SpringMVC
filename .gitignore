@@ -1,0 +1,29 @@
+# Ignore compiled Java classes
+*.class
+
+# Ignore .jar, .war, .ear files
+*.jar
+*.war
+*.ear
+
+# Ignore Maven / Gradle build directories
+/target/
+/build/
+
+# Ignore IDE files
+/.idea/
+/.vscode/
+/.project
+/.classpath
+/.settings/
+/*.iml
+
+# Ignore log files
+*.log
+
+# Ignore dependency cache
+/.m2/
+/.gradle/
+
+# Ignore environment variables
+.env
